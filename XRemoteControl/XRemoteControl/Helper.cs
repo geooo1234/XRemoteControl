@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Net.Http;
 
-namespace XRemoteControl
+namespace XRemoteControl 
 {
     public static class Helper
     {
