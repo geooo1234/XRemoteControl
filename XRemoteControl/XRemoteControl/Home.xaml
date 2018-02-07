@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XRemoteControl"
+             x:Class="XRemoteControl.Home">
+    <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+    <ContentPage.Padding >
+    </ContentPage.Padding>
+    <Grid BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+        <Label Font="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"  Grid.ColumnSpan="3">Xamarin Remote Control
+        </Label>
+        <Button Text="ShutDown" Font="30" TextColor="White" Grid.Row="1" Grid.Column="2" BackgroundColor="#008080" Clicked="ShutDown"  />
+        <Button Text="Restart" Font="30" TextColor="White" Grid.Row="2" Grid.Column="2"  BackgroundColor="#008080"  Clicked="Restart"/>
+        <Button Text="Log Off" Font="30" TextColor="White" Grid.Row="1" Grid.Column="0"  BackgroundColor="#008080" Clicked="Logoff" />
+        <Button Text="Process" Font="30" TextColor="White" Grid.Row="1" Grid.Column="1"  BackgroundColor="#008080" Clicked="Procces" />
+        <Button Text="Ping" Font="30" TextColor="White" Grid.Row="2" Grid.Column="0"  BackgroundColor="#008080" Clicked="Ping" />
+        <Button Text="Control Volume" Font="30" TextColor="White" Grid.Row="2" Grid.Column="1"  BackgroundColor="#008080" Clicked="SetVolume"/>
+
+    </Grid>
+
+</ContentPage>

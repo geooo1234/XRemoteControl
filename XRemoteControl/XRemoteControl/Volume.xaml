@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XRemoteControl.Volume"
+    BackgroundColor="Black">
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Set Volume:" BackgroundColor="White"></Label>
+            <Label  x:Name="lab" TextColor="White">
+            </Label>
+            <Label Text="%" TextColor="White">
+            </Label>
+        </StackLayout>
+        <Slider Minimum="0" Maximum="100" Value="0"  VerticalOptions="Center" IsVisible="true" BackgroundColor="White" x:Name="Vol" WidthRequest="30" ></Slider>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Mute" x:Name="Mute" BackgroundColor="White" Clicked="SetVol1" ></Button>
+            <Button Text="Unmute" x:Name="Unmute" BackgroundColor="White" Clicked="SetVol" ></Button>
+            <Button Text="Back" BackgroundColor="White"  Clicked="BackButton"></Button>
+
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

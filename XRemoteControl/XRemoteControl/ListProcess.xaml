@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XRemoteControl.ListProcess"
+              BackgroundColor="#1e1e1e"
+              Appearing="AppLoaded">
+   
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                WinPhone="0, 0, 0, 50" />
+        
+    </ContentPage.Padding>
+    <Label Grid.Row="0" Text=" The process atributes" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#7ac1ff" FontSize="30"></Label>
+    <StackLayout>
+      
+        <Grid Padding="5">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+
+
+            </Grid.ColumnDefinitions>
+
+            
+
+            <ListView HasUnevenRows="True" x:Name="ParametersView" ItemSelected="StartStop"  >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Padding="0,0,0,5" Orientation="Vertical">
+
+                                    <StackLayout Orientation="Vertical" x:Name="StackLayoutView">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Image Name:" TextColor="#7ac1ff"  ></Label>
+                                            <Label Text="{Binding imagename}"  TextColor="#7ac1ff"  ></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="PID:" x:Name="L1" TextColor="#7ac1ff"  ></Label>
+                                            <Label Text="{Binding pid}"  TextColor="#7ac1ff"  ></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Session Name:" TextColor="#7ac1ff"  ></Label>
+                                            <Label Text="{Binding sessionname}"  TextColor="#7ac1ff"  ></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Session Number:" TextColor="#7ac1ff"  ></Label>
+                                            <Label Text="{Binding sessionnumber}"  TextColor="#7ac1ff"  ></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Mem Usage:" TextColor="#7ac1ff"  ></Label>
+                                            <Label Text="{Binding memusage}"  TextColor="#7ac1ff"  ></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Status:" TextColor="#7ac1ff" ></Label>
+                                            <Label Text="{Binding status}"  TextColor="#7ac1ff"  ></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="User Name:" TextColor="#7ac1ff"  ></Label>
+                                            <Label Text="{Binding username}"  TextColor="#7ac1ff" ></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="CPU Time:" TextColor="#7ac1ff"  ></Label>
+                                            <Label Text="{Binding cputime}"  TextColor="#7ac1ff"></Label>
+
+                                        </StackLayout >
+
+                                    </StackLayout>
+
+
+                                </StackLayout>
+
+
+
+
+
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </Grid>
+        <Button Text="Back" BackgroundColor="White"     Clicked="BackButton" ></Button>
+    </StackLayout>
+</ContentPage>

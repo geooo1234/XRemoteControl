@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XRemoteControl.Ping"
+             BackgroundColor="Black"
+            >
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                WinPhone="0, 0, 0, 50" />
+    </ContentPage.Padding>
+    <Label Grid.Row="0" Text=" The process atributes" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#7ac1ff" FontSize="30"></Label>
+    <Grid Padding="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="1" Padding="0,0,0,5" Orientation="Vertical">
+
+            <StackLayout Orientation="Vertical" >
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Adress:" TextColor="#7ac1ff"></Label>
+                    <Entry Text="{Binding adress , Mode=TwoWay}" x:Name="TextEntry" TextColor="#7ac1ff" WidthRequest="200"></Entry>
+                    <Button Text="Send" BackgroundColor="White"  Clicked="Send"></Button>
+                    <Button Text="Back" BackgroundColor="White"  Clicked="BackButton"></Button>
+                </StackLayout>
+                <Label Text="Ping request could not find this host. Please check the name and try again" TextColor="#7ac1ff" x:Name="label1" IsVisible="false"></Label>
+                <ListView x:Name="ParamView" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Ping statistics for" TextColor="#7ac1ff"></Label>
+                                            <Label Text="{Binding ip}" TextColor="#7ac1ff"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Sent=" TextColor="#7ac1ff"></Label>
+                                            <Label Text="{Binding sent}" TextColor="#7ac1ff"></Label>
+                                            <Label Text="Received=" TextColor="#7ac1ff"></Label>
+                                            <Label Text="{Binding received}"  TextColor="#7ac1ff"></Label>
+                                            <Label Text="Lost=" TextColor="#7ac1ff"></Label>
+                                            <Label Text="{Binding lost}" TextColor="#7ac1ff"></Label>
+                                        </StackLayout>
+                                        <Label Text="Approximate round trip times in milli-seconds:" TextColor="#7ac1ff"></Label>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Minimum=" TextColor="#7ac1ff"></Label>
+                                            <Label Text="{Binding minimum}" TextColor="#7ac1ff"></Label>
+                                            <Label Text="ms" TextColor="#7ac1ff"></Label>
+                                            <Label Text="Maximum=" TextColor="#7ac1ff"></Label>
+                                            <Label Text="{Binding maximum}" TextColor="#7ac1ff"></Label>
+                                            <Label Text="ms" TextColor="#7ac1ff"></Label>
+                                            <Label Text="Average=" TextColor="#7ac1ff"></Label>
+                                            <Label Text="{Binding average}" TextColor="#7ac1ff"></Label>
+                                            <Label Text="ms" TextColor="#7ac1ff"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
